@@ -1,15 +1,19 @@
 
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
 body{
     /*background: -webkit-linear-gradient(left, #003300, #006600);*/
     background: #006600;
+    font-family: ‘cwTeXYen’, sans-serif;
 }
+
+
 .contact-form{
     background: #fff;
     border-radius: 2rem;
     margin-top: 10%;
     margin-bottom: 5%;
-    width: 70%;
+    width: 75%;
 }
 .contact-form .form-control{
     border-radius:1rem;

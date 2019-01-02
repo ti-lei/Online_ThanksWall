@@ -27,11 +27,13 @@ def index():
 		d['Receiver'] = request.values.get('receiver',"")
 		d['Receiverdepartment'] = request.values.get('receiverdepartment',"")
 
+		textnum = len(d['Context'])
+
 		#list() 強迫轉型，才能使用count函數
 		check_is_legal = list(d.values()).count("")
 
 		# 如果沒有拿到空字串的話 (使用者全部的東西都有輸入)
-		if check_is_legal == 0:
+		if (check_is_legal == 0 and textnum <= 100):
 
 			Data_row.append(d)
 			NewData = Data_row + Old_Data
@@ -39,6 +41,11 @@ def index():
 			df.to_csv('Data.csv',encoding='utf_8_sig', index=False)
 			return redirect(url_for('TextBoard'))
 
+		elif textnum > 100:
+			textoutlimit = textnum
+			return render_template("index.html",textoutlimit = textnum)
+
+		# 若字數小於100 但沒有全部填的情形
 		else:
 			error = 'Please fill the whole form'
 			return render_template("index.html",error = error)
