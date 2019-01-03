@@ -20,12 +20,14 @@
 					{% else %}
 					<section data-background ="/背景1.jpg">
 					{% endif %}
-
-					<h4 style= "margin-right: 40%;">To&nbsp;&nbsp;&nbsp;&nbsp;{{Data.loc[row,'Receiverdepartment']}}&nbsp;&nbsp; {{Data.loc[row,'Receiver']}} :</h3>
-					<h3 style ="width:600px;text-align:center;margin-left: 200px;">{{Data.loc[row,'Context']}}</h4>
-					<h4 style= "margin-left: 40%;">From&nbsp;&nbsp;&nbsp;&nbsp;{{Data.loc[row,'Yourdepartment']}}&nbsp;&nbsp; {{Data.loc[row,'Yourname']}}</h3>
+					<h4 style= "margin-right: 60%;">To&nbsp;&nbsp;&nbsp;&nbsp;{{Data.loc[row,'Receiverdepartment']}}</h3>
+					<h3 style= "margin-right: 40%;">&nbsp;&nbsp; {{Data.loc[row,'Receiver']}} :</h3>
+					<h3 style ="width:600px;text-align:center;margin-left: 200px;">{{Data.loc[row,'Context']}}</h3>
+					<h4 style= "margin-left: 40%;">From&nbsp;&nbsp;&nbsp;&nbsp;{{Data.loc[row,'Yourdepartment']}}</h4>
+					<h4 style= "margin-left: 60%;">&nbsp;&nbsp; {{Data.loc[row,'Yourname']}}</h4>
 					<p style="margin-top: 20%;">
 						<small> <a href="/">還想說些什麼~?</a></small>
+
 					</p>
 				</section>
 				{% endfor %}
