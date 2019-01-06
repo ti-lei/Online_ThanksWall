@@ -39,7 +39,7 @@ def index():
 			NewData = Data_row + Old_Data
 			df = pd.DataFrame(NewData)
 			df.to_csv('Data.csv',encoding='utf_8_sig', index=False)
-			return redirect(url_for('TextBoard'))
+			return redirect(url_for('Success'))
 
 		elif textnum > 100:
 			textoutlimit = textnum
@@ -53,6 +53,9 @@ def index():
 	return render_template("index.html")
 
 
+@app.route("/Success")
+def Success():
+	return render_template("sucess.html")
 
 @app.route("/TextBoard")
 def TextBoard():
