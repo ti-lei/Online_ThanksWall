@@ -60,6 +60,8 @@ def Success():
 @app.route("/TextBoard")
 def TextBoard():
 	Data = pd.read_csv("Data.csv")
+	Data = Data.sample(frac=1).reset_index(drop=True)
+	print(Data)
 	return render_template("TextBoard.html",Data=Data)
 
 
